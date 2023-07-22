@@ -1,0 +1,7 @@
+- name: "Cloning SecLists repo"
+  ansible.builtin.git:
+    repo: https://github.com/danielmiessler/SecLists.git
+    dest: /tmp/SecLists/
+
+- name: "Copying to /opt/SecLists/"
+  ansible.builtin.command: sudo mv /tmp/SecLists /opt/

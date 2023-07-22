@@ -1,0 +1,5 @@
+- name: "Update PATH"
+  ansible.builtin.lineinfile:
+    path: ~/.bashrc
+    line: PATH=/opt/bin:~/go/bin:~/.local/bin:$PATH
+    create: yes

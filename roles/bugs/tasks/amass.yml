@@ -1,0 +1,21 @@
+---
+- name: "Downloading amass"
+  ansible.builtin.get_url:
+    url: https://github.com/owasp-amass/amass/releases/download/v4.0.2/amass_Linux_amd64.zip
+    dest: /tmp/amass_Linux_amd64.zip
+
+- name: "Unzipping file"
+  ansible.builtin.unarchive:
+    src: /tmp/amass_Linux_amd64.zip
+    dest: /tmp/
+
+- name: "Creating /opt/bin"
+  ansible.builtin.command: sudo mkdir /opt/bin
+
+- name: "Permissions"
+  ansible.builtin.command: sudo chmod 0777 /opt/bin
+
+- name: "Moving file to /opt/"
+  ansible.builtin.copy:
+    src: /tmp/amass_Linux_amd64/amass
+    dest: /opt/bin/amass

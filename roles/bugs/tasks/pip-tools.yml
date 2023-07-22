@@ -1,0 +1,9 @@
+---
+- name: "Install mitmproxy"
+  community.general.pipx:
+    name: mitmproxy
+
+- name: "Install wsrepl"
+  community.general.pipx:
+    name: wsrepl
+

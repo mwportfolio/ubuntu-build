@@ -1,0 +1,13 @@
+---
+- name: "Downloading rockyou.txt"
+  ansible.builtin.get_url:
+    url: https://gitlab.com/kalilinux/packages/wordlists/-/raw/kali/master/rockyou.txt.gz?inline=false
+    dest: /tmp/rockyou.txt.gz
+
+- name: "Unzipping file"
+  ansible.builtin.command: gunzip /tmp/rockyou.txt.gz
+
+- name: "Moving file to /opt/"
+  ansible.builtin.copy:
+    src: /tmp/rockyou.txt
+    dest: /opt/rockyou.txt

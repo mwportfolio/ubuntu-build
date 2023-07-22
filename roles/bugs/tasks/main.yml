@@ -1,0 +1,11 @@
+---
+- include: apt-tools.yml
+- include: seclists.yml
+- include: projectdiscovery.yml
+- include: waybackurls.yml
+- include: jsluice.yml
+- include: ffuf.yml
+- include: pip-tools.yml
+- include: amass.yml
+- include: customise_nano.yml
+- include: customise_bash.yml

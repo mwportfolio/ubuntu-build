@@ -1,0 +1,7 @@
+- name: "Installing projectdiscovery tool manager"
+  ansible.builtin.command: go install github.com/projectdiscovery/pdtm/cmd/pdtm@latest
+
+- name: "Install all tools"
+  ansible.builtin.command: ~/go/bin/pdtm -install-all
+
+

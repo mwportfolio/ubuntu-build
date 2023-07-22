@@ -1,0 +1,24 @@
+- name: "Copy /etc/nanorc"
+  ansible.builtin.command: cp /etc/nanorc /tmp/nanorc
+
+- name: "Enable linenumbers"
+  ansible.builtin.lineinfile:
+    path: /tmp/nanorc
+    line: set linenumbers
+    create: yes
+
+- name: "Enable scrollbar"
+  ansible.builtin.lineinfile:
+    path: /tmp/nanorc
+    line: set indicator
+    create: yes
+
+- name: "Set line number color"
+  ansible.builtin.lineinfile:
+    path: /tmp/nanorc
+    line: set numbercolor grey
+    create: yes
+
+- name: "Overwrite /etc/nanorc"
+  ansible.builtin.command: sudo cp /tmp/nanorc /etc/nanorc
+
